@@ -1,8 +1,8 @@
 class Repartidor extends Empleado {
-    private int numRepartos;
+    private int numeroRepartos;
     private char zona;
 
-    public Repartidor(String identificacion, String nombre, int edad, int anioIngreso, double salarioBasico, int numRepartos, char zona) {
+    public Repartidor(String identificacion, String nombre, int edad, int anioIngreso, double salarioBasico, int numeroRepartos, char zona) {
         super(identificacion, nombre, edad, anioIngreso, salarioBasico);
         this.numRepartos = numRepartos;
         this.zona = validarZona(zona);
