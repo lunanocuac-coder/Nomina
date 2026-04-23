@@ -1,25 +1,30 @@
 class Repartidor extends Empleado {
     private int numeroRepartos;
-    private char zona;
+    private String zona;
 
-    public Repartidor(String identificacion, String nombre, int edad, int anioIngreso, double salarioBasico, int numeroRepartos, char zona) {
+    public Repartidor(String identificacion, String nombre, int edad, int anioIngreso, double salarioBasico, int numeroRepartos, String zona) {
         super(identificacion, nombre, edad, anioIngreso, salarioBasico);
-        this.numRepartos = numRepartos;
+        this.numeroRepartos = numeroRepartos;
         this.zona = validarZona(zona);
     }
 
-    private char validarZona(char zona) {
-        if (zona == 'A' || zona == 'B' || zona == 'C' || zona == 'D') {
-            return zona;
+    private String validarZona(String zona) {
+        switch (zona) {
+            case "A":
+            case "B":
+            case "C":
+            case "D":
+                return zona;
+            default:
+                return "C";
         }
-        return 'C';
     }
 
     public void liquidarNomina() {
-        double pagoRepartos = numRepartos * 10000;
+        double pagoRepartos = numeroRepartos * 10000;
         double salario = salarioBasico + pagoRepartos;
 
-        if ((2026 - anioIngreso) >= 5 && zona == 'C') {
+        if ((2026 - anioIngreso) >= 5 && zona == "C") {
             salario += 50000;
         }
 
@@ -27,6 +32,6 @@ class Repartidor extends Empleado {
         double neto = salario - descuento;
 
         System.out.println("Repartidor, " + identificacion + ", " + nombre + ", " + anioIngreso +
-                ", " + salarioBasico + ", " + numRepartos + ", " + pagoRepartos + ", " + descuento + ", " + neto);
+                ", " + salarioBasico + ", " + numeroRepartos + ", " + pagoRepartos + ", " + descuento + ", " + neto);
     }
 }
