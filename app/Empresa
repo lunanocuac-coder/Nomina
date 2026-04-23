@@ -12,7 +12,7 @@ public class Empresa {
         empleados[4] = new Repartidor("5", "Maria", 32, 2015, 950000, 60, 'C');
         empleados[5] = new Repartidor("6", "Juan", 25, 2020, 800000, 40, 'X');
 
-        for (Empleado e : empleados) {
+        for (Empleado : empleados) {
             e.liquidarNomina();
         }
     }
