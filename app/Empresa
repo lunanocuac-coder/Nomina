@@ -1,0 +1,19 @@
+public class Empresa {
+
+    public static void main(String[] args) {
+
+        Empleado[] empleados = new Empleado[6];
+
+        empleados[0] = new Vendedor("1", "Ana", 30, 2000, 1000000, 5000000);
+        empleados[1] = new Vendedor("2", "Luis", 40, 2010, 1200000, 3000000);
+        empleados[2] = new Vendedor("3", "Carlos", 35, 1995, 1500000, 7000000);
+
+        empleados[3] = new Repartidor("4", "Pedro", 28, 2018, 900000, 50, 'A');
+        empleados[4] = new Repartidor("5", "Maria", 32, 2015, 950000, 60, 'C');
+        empleados[5] = new Repartidor("6", "Juan", 25, 2020, 800000, 40, 'X');
+
+        for (Empleado e : empleados) {
+            e.liquidarNomina();
+        }
+    }
+}
