@@ -1,7 +1,7 @@
 class Vendedor extends Empleado {
     private double totalVentas;
 
-    public Vendedor(String identificacion, String nombre, int edad, int anioIngreso, double salarioBasico, double totalVentas) {
+    public Vendedor(String identificacion, String nombre, int edad, int añoIngreso, double salarioBasico, double totalVentas) {
         super(identificacion, nombre, edad, anioIngreso, salarioBasico);
         this.totalVentas = totalVentas;
     }
@@ -10,14 +10,14 @@ class Vendedor extends Empleado {
         double comision = totalVentas * 0.15;
         double salario = salarioBasico + comision;
 
-        if ((2026 - anioIngreso) > 20) {
+        if ((2026 - añoIngreso) > 20) {
             salario += 100000;
         }
 
         double descuento = salario * 0.10;
         double neto = salario - descuento;
 
-        System.out.println("Vendedor, " + identificacion + ", " + nombre + ", " + anioIngreso +
+        System.out.println("Vendedor, " + identificacion + ", " + nombre + ", " + añoIngreso +
                 ", " + salarioBasico + ", " + totalVentas + ", " + comision + ", " + descuento + ", " + neto);
     }
 }
